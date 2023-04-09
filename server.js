@@ -34,10 +34,10 @@ app.post("/send-email", (req, res) => {
       res.status(500).send("Error send email");
     } else {
       console.log(`Email sent: ${info.response}`);
+      res.status(200).json({ message: "Email sent successfully" });
     }
   });
 });
-
 
 const PORT = process.env.PORT || 5000;
 
